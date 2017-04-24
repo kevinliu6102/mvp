@@ -18,27 +18,37 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  LoL Critic
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  For LoL players who want to make their opinions on other players heard.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Have you ever fed the hell out of the other team and left instantly when the game ended to avoid getting flamed? There is no running. Flamers rejoice, your voice will be heard by all on LoL critic.
 
 ## Problem ##
   > Describe the problem your product solves.
+  In online games, flaming is a frowned upon and punishable offense. Because there is no outlet for negativity, players can play multiple games while on tilt from a bad experience and ruin those games for both themselves and other players. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  LoL Critic is a social media platform that is open to letting users express both compliments and criticism to other players, to facilitate post-game interaction that the game itself robs players of. 
+  
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  Don't keep your opinions bottled up inside, let them be heard by all on LoL Critic.
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Search your summoner name and look through your 10 most recent games to find the player you want to compliment/critique. Post a message to a global board visible to all where you tag the player with their score at the end of the game and say what needs to be said. The relevant player may not want to participate in the social network, so your message is publically visible so that at least other people will see and offer discussion.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  I love LoL Critic because it lets me tell others how my experience with certain players went, whether that was positive or negative. I can also let out my negative emotions and move on to the next game feeling refreshed. 
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Want to start reading and writing player critiques? Head over to [INSERT DOMAIN NAME] to get started. 
