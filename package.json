@@ -1,0 +1,31 @@
+{
+  "name": "lolcritic",
+  "version": "1.0.0",
+  "description": "For LoL players who want to make their opinions on other players heard.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinliu6102/hrla14-mvp.git"
+  },
+  "author": "Kevin Liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinliu6102/hrla14-mvp/issues"
+  },
+  "homepage": "https://github.com/kevinliu6102/hrla14-mvp#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.6",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
+  }
+}
