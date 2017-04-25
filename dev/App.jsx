@@ -16,13 +16,14 @@ class App extends Component {
     }
 
     this.searchSummoner = this.searchSummoner.bind(this)
+    this.sendMessage = this.sendMessage.bind(this)
   }
 
 // shows matchhistory
   searchSummoner(event) {
     event.preventDefault()
     event.stopPropagation()
-    const app = this
+    let app = this
     let user = event.target.children[1].value
     axios.get(`/api/summoner/${user}`)
       .then((res) => app.setState({
@@ -33,6 +34,25 @@ class App extends Component {
       .catch((e) => console.log('error getting match history', e))
   }
 
+  sendMessage(event, targetName) {
+    event.preventDefault()
+    event.stopPropagation()
+
+    let app = this
+    
+    axios.post('/message', {
+        targetUser: targetName,
+        text: event.target.children[0].value
+      })
+      .then((res) => {
+        app.setState({
+          messages: this.state.messages.concat(res.data.model),
+          searching: false
+        })
+      })
+    
+  }
+
   render() {
     return (
       <div>
@@ -40,7 +60,7 @@ class App extends Component {
           <div id="body">
             {
               (this.state.searching)
-              ? <MatchHistory user={this.state.user} matches={this.state.matches}/>
+              ? <MatchHistory sendMessage={this.sendMessage} user={this.state.user} matches={this.state.matches}/>
               : <MessageFeed messages={this.state.messages}/>
             }
           </div>

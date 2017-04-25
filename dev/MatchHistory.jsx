@@ -7,7 +7,6 @@ class MatchHistory extends Component {
   constructor(props) {
     super(props)
 
-    console.log(props.user)
     this.state = {
       matches: props.matches,
       focusMatch: null
@@ -31,7 +30,7 @@ class MatchHistory extends Component {
       <div>
         {
           (this.state.focusMatch)
-          ? <MessageInterface targetData={this.state.focusMatch}/>
+          ? <MessageInterface sendMessage={this.props.sendMessage} targetData={this.state.focusMatch}/>
           : <ul>
               {this.state.matches.map((match) => <MatchEntry user={this.props.user} focusOnMatch={this.focusOnMatch} match={match}/>)}
             </ul>
