@@ -4,6 +4,7 @@ const Promise = require('bluebird')
 
 exports.fetchMatchHistory = (req, res) => {
   // get summoner ID with summoner name lookup
+  console.log('Serving ' + req.url)
   request.get(ctrlHelpers.genReqOptions(`https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/${req.params.name}`))
   // get last 10 recent games with summoner ID lookup
   .then((summoner) => request.get(ctrlHelpers.genReqOptions(`https://na.api.riotgames.com/api/lol/NA/v1.3/game/by-summoner/${summoner.id}/recent`)))

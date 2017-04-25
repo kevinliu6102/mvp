@@ -3,11 +3,11 @@ import MessageEntry from './MessageEntry'
 import axios from 'axios'
 
 class MessageFeed extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
-      messages: [],
+      messages: props.messages,
       fetching: false
     }
   }
