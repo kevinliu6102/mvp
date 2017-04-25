@@ -3,29 +3,6 @@ import axios from 'axios'
 import Score from './Score'
 import TeamView from './TeamView'
 
-// const MatchEntry = (props) => {
-//   let red = props.match.fellowPlayers.filter((player) => player.teamId === 100)
-//   let blue = props.match.fellowPlayers.filter((player) => player.teamId === 200)
-//   if (props.match.teamId === 100) {
-//     red.push({ teamId: props.match.teamId, championId: props.match.championId, summonerName: props.user})
-//   } else {
-//     blue.push({ teamId: props.match.teamId, championId: props.match.championId, summonerName: props.user})
-//   }
-//   let score = [props.match.stats.championsKilled, props.match.stats.numDeaths, props.match.stats.assists]
-
-//   return (
-//     <li>
-//       <span>{props.match.stats.win ? 'VICTORY' : 'DEFEAT'}</span>
-//       <span>{`${props.match.gameMode} - ${props.match.subType}`}</span>
-//       <Score score={score}/>
-//       <div className="teamsContainer">
-//         <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={red} color={'red'}/>
-//         <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={blue} color={'blue'}/>
-//       </div>
-//     </li>
-//   )
-// }
-
 class MatchEntry extends Component {
   constructor(props) {
     super(props)
@@ -46,7 +23,7 @@ class MatchEntry extends Component {
       }
       return tuple
     }, [{}, {}])
-    console.log(teams)
+    
     if (this.props.match.teamId === 100) {
       teams[0][this.props.match.championId] = { teamId: this.props.match.teamId, championId: this.props.match.championId, summonerName: this.props.user}
     } else {
@@ -54,23 +31,23 @@ class MatchEntry extends Component {
     }
     let score = [this.props.match.stats.championsKilled, this.props.match.stats.numDeaths, this.props.match.stats.assists]
     let context = this
-    context.setState({ teams })
 
-    // axios.get(`/api/match/${context.props.gameId}`)
-    //   .then((res) => {
-    //     res.participants.forEach((player) => {
-    //       if (player.teamId === 100) {
-            
-    //       } else {
-
-    //       }
-    //     })
-    //   })
+    axios.get(`/api/match/${context.props.match.gameId}`)
+      .then((res) => {
+        res.data.participants.forEach((player) => {
+          let playerScore = [player.stats.kills, player.stats.deaths, player.stats.assists]
+          if (player.teamId === 100) {
+            teams[0][player.championId].score = playerScore
+          } else {
+            teams[1][player.championId].score = playerScore
+          }
+        })
+        context.setState({ teams })
+      })
   }
   
 
   render() {
-    // console.log(this.state)
     return (
       <li>
         <span>{this.props.match.stats.win ? 'VICTORY' : 'DEFEAT'}</span>
