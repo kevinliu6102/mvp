@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const autoIncrement = require('mongoose-auto-increment')
 const Schema = mongoose.Schema
 
 const MessageSchema = new Schema({
@@ -15,5 +16,7 @@ const MessageSchema = new Schema({
   timestamps: true
 })
 
-let Message = mongoose.model('Message', MessageSchema)
+MessageSchema.plugin(autoIncrement.plugin, 'Message')
+
+const Message = mongoose.model('Message', MessageSchema)
 module.exports = Message;
