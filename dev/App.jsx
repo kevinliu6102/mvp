@@ -25,6 +25,7 @@ class App extends Component {
     event.stopPropagation()
     let app = this
     let user = event.target.children[1].value
+    axios.post('/user', { name: user })
     axios.get(`/api/summoner/${user}`)
       .then((res) => app.setState({
         searching: true,
@@ -41,13 +42,14 @@ class App extends Component {
     let app = this
     
     axios.post('/message', {
+        sender: this.state.user,
         score: score,
         targetUser: targetName,
         text: event.target.children[0].value
       })
       .then((res) => {
         app.setState({
-          messages: this.state.messages.concat(res.data.model),
+          // messages: this.state.messages.concat(res.data.model),
           searching: false
         })
       })

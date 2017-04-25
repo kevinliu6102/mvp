@@ -3,6 +3,11 @@ const autoIncrement = require('mongoose-auto-increment')
 const Schema = mongoose.Schema
 //add scores array to schema
 const MessageSchema = new Schema({
+  sender: {
+    type: Number,
+    ref: 'Summoner',
+    required: true
+  },
   text: {
     type: String,
     required: true

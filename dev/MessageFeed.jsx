@@ -16,7 +16,7 @@ class MessageFeed extends Component {
     // fetch messages
     let context = this
     axios.get('/message')
-      .then((res) => context.setState({ messages: res.data }))
+      .then((res) => context.setState({ messages: res.data.reverse() }))
       .catch((e) => console.log('error fetching messages', e))
   }
 

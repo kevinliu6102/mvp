@@ -8,6 +8,7 @@ const MessageEntry = (props) => {
   // message  
   return (
     <li>
+      <span>{props.message.sender.name}</span>
       <span>{props.message.createdAt}</span>
       <span>@{props.message.targetUser.name}</span>
       <Score score={props.message.score.split(',')}/>

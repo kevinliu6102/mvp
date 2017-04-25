@@ -11,13 +11,16 @@ const MatchEntry = (props) => {
     blue.push({ teamId: props.match.teamId, championId: props.match.championId, summonerName: props.user})
   }
   let score = [props.match.stats.championsKilled, props.match.stats.numDeaths, props.match.stats.assists]
+  
   return (
     <li>
       <span>{props.match.stats.win ? 'VICTORY' : 'DEFEAT'}</span>
       <span>{`${props.match.gameMode} - ${props.match.subType}`}</span>
       <Score score={score}/>
-      <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={red} color={'red'}/>
-      <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={blue} color={'blue'}/>
+      <div className="teamsContainer">
+        <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={red} color={'red'}/>
+        <TeamView matchId={props.match.gameId} focusOnMatch={props.focusOnMatch} team={blue} color={'blue'}/>
+      </div>
     </li>
   )
 }
