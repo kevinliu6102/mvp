@@ -43,7 +43,7 @@ Once the project moves into development, the press release can be used as a touc
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-  Search your summoner name and look through your 10 most recent games to find the player you want to compliment/critique. Post a message to a global board visible to all where you tag the player with their score at the end of the game and say what needs to be said. The relevant player may not want to participate in the social network, so your message is publically visible so that at least other people will see and offer discussion.
+  Search your summoner name and look through your last four games to find the player you want to compliment/critique. Post a message to a global board visible to all where you tag the player with their score at the end of the game and say what needs to be said. The relevant player may not want to participate in the social network, so your message is publically visible so that at least other people will see and offer discussion.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
