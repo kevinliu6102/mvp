@@ -34,13 +34,14 @@ class App extends Component {
       .catch((e) => console.log('error getting match history', e))
   }
 
-  sendMessage(event, targetName) {
+  sendMessage(event, targetName, score) {
     event.preventDefault()
     event.stopPropagation()
 
     let app = this
     
     axios.post('/message', {
+        score: score,
         targetUser: targetName,
         text: event.target.children[0].value
       })

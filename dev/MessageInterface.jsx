@@ -8,7 +8,7 @@ const MessageInterface = (props) => {
     <div>
       <span>{`${targetName}'s Score was `}</span>
       <Score score={score}/>
-      <form onSubmit={(e) => props.sendMessage(e, targetName)}>
+      <form onSubmit={(e) => props.sendMessage(e, targetName, score.join(','))}>
         <input type="text"/>
       </form>
     </div>

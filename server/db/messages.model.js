@@ -1,9 +1,13 @@
 const mongoose = require('mongoose')
 const autoIncrement = require('mongoose-auto-increment')
 const Schema = mongoose.Schema
-
+//add scores array to schema
 const MessageSchema = new Schema({
   text: {
+    type: String,
+    required: true
+  },
+  score: {
     type: String,
     required: true
   },
