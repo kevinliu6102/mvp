@@ -4,6 +4,7 @@ import Score from './Score'
 const MessageInterface = (props) => {
   let score = props.targetData.score
   let targetName = props.targetData.targetName
+  console.log(targetName)
   return (
     <div>
       <div>

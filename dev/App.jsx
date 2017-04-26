@@ -24,7 +24,7 @@ class App extends Component {
     event.preventDefault()
     event.stopPropagation()
     let app = this
-    let user = event.target.children[1].value
+    let user = event.target.children[0].value
     axios.post('/user', { name: user })
     axios.get(`/api/summoner/${user}`)
       .then((res) => app.setState({
@@ -59,13 +59,13 @@ class App extends Component {
     return (
       <div>
         <Navbar searchSummoner={this.searchSummoner}/>
-          <div id="body">
-            {
-              (this.state.searching)
-              ? <MatchHistory sendMessage={this.sendMessage} user={this.state.user} matches={this.state.matches}/>
-              : <MessageFeed messages={this.state.messages}/>
-            }
-          </div>
+        <div id="body">
+          {
+            (this.state.searching)
+            ? <MatchHistory sendMessage={this.sendMessage} user={this.state.user} matches={this.state.matches}/>
+            : <MessageFeed messages={this.state.messages}/>
+          }
+        </div>
       </div>
     )
   }

@@ -48,8 +48,8 @@ class MatchEntry extends Component {
 
   render() {
     return (
-      <li>
-        <span>{this.props.match.stats.win ? 'VICTORY' : 'DEFEAT'}</span>
+      <li className="row">
+        <span className="winloss">{this.props.match.stats.win ? 'VICTORY' : 'DEFEAT'}</span>
         <span>{`${this.props.match.gameMode} - ${this.props.match.subType}`}</span>
         
         {
