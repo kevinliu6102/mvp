@@ -1,0 +1,180 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+	Styles
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	background-color: whitesmoke;
+	font-family: "Roboto", sans-serif;
+	color: #bdbdbd;
+}
+
+nav {
+	position: fixed;
+	background-color: #2e7179;
+	height: 50px;
+	width: 100%;
+}
+
+nav > form {
+	float: right;
+	padding-right: 10px;
+}
+
+nav > form > input {
+	border-radius: 5px;
+	margin-top: 1em;
+	line-height: 2em;
+}
+
+nav:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+.wrapper {
+	margin-left: 10px;
+	height: 50px;
+	display: inline-block;
+	width: 75px;
+	text-align: center;
+}
+
+.wrapper > a {
+	display: block;
+	padding-top: 1em;
+}
+
+#body {
+	padding-top: 60px;
+	width: 900px;
+	height: 100vh;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #0f0f27;
+}
+
+.row {
+	padding: 10px 0px;
+	background-color: #2c4d67;
+	width: 75%;
+	margin: 0 auto;
+	border: 1px solid grey;
+}
+
+.sender {
+	font-weight: bold;
+	padding-right: 5px;
+}
+
+.top {
+	padding-bottom: 5px;
+}
+
+.red, .blue {
+	display: inline-block;
+	width: 25%;
+	border-radius: 5px;
+}
+
+.red {
+	background-color: red;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.score {
+	display: inline-block;
+	padding: 0px 5px;
+}
+
+.teamsContainer {
+	margin-top: 5px;	
+}
+
+.winloss {
+	padding-right: 5px;
+	font-weight: bold;
+}
+
+.player {
+	padding-top: 5px;
+}
+
+.player:last-child {
+	padding-bottom: 5px;
+}
+
+.kills {
+	color: green;
+}
+
+.deaths {
+	color: red;
+}
+
+.assists {
+	color: blue;
+}
