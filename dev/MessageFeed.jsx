@@ -23,7 +23,11 @@ class MessageFeed extends Component {
   render() {
     return (
       <ul>
-        {this.state.messages.map((message) => <MessageEntry message={message}/>)}
+        {
+          (this.state.messages)
+          ? this.state.messages.map((message) => <MessageEntry message={message}/>)
+          : ''
+        }
       </ul>
     )
   }

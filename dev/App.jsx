@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       searching: false,
-      messages: [],
+      messages: null,
       matches: [],
       user: null
     }
@@ -49,7 +49,6 @@ class App extends Component {
       })
       .then((res) => {
         app.setState({
-          // messages: this.state.messages.concat(res.data.model),
           searching: false
         })
       })

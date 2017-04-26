@@ -12,17 +12,17 @@ class MatchHistory extends Component {
       focusMatch: null
     }
     this.focusOnMatch = this.focusOnMatch.bind(this);
+    this.unfocus = this.unfocus.bind(this)
   }
 
-  focusOnMatch(targetName, championId, teamId, matchId) {
-    let context = this
-    axios.get(`/api/match/${matchId}`)
-      .then((res) => {
-        let target = res.data.participants.filter((player) => player.championId === championId && player.teamId === teamId)[0]
-        target.summonerName = targetName
-        context.setState({ focusMatch: target })
-      })
-      .catch((e) => console.log('error fetching specific match', e))
+  unfocus(event) {
+    event.preventDefault()
+    event.stopPropagation()
+    this.setState({ focusMatch: null })
+  }
+
+  focusOnMatch(score, targetName) {
+    this.setState({ focusMatch: { score, targetName } })
   }
 
   render() {
@@ -30,7 +30,7 @@ class MatchHistory extends Component {
       <div>
         {
           (this.state.focusMatch)
-          ? <MessageInterface sendMessage={this.props.sendMessage} targetData={this.state.focusMatch}/>
+          ? <MessageInterface sendMessage={this.props.sendMessage} targetData={this.state.focusMatch} unfocus={this.unfocus}/>
           : <ul>
               {this.state.matches.map((match) => <MatchEntry user={this.props.user} focusOnMatch={this.focusOnMatch} match={match}/>)}
             </ul>

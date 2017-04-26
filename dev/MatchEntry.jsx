@@ -15,7 +15,6 @@ class MatchEntry extends Component {
   componentDidMount() {
     // 0 is red, 1 is blue
     let teams = this.props.match.fellowPlayers.reduce((tuple, player) => {
-      console.log('in reduce')
       if (player.teamId === 100) {
         tuple[0][player.championId] = player
       } else {

@@ -3,7 +3,6 @@ import _ from 'lodash'
 import TeamViewEntry from './TeamViewEntry'
 
 const TeamView = (props) => {
-  console.log(props.team)
   return (
     <div className={props.color}>
       {
